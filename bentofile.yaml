@@ -1,0 +1,15 @@
+service: "src.service:svc"
+
+docker:
+  dockerfile_template: "./Dockerfile.template"
+  base_image: python:3.8-slim
+
+include:
+  - src/**
+  - models/**
+python:
+  packages:
+    - scikit-learn
+    - numpy
+    - bentoml
+    - joblib
